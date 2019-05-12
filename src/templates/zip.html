@@ -5,12 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>ZipCheck</title>
-
+	<title>ZipCheck</title>
+	
+	<script src="../static/js/jquery.min.js"></script>
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="../static/dist/drawingboard.min.css">
+	<script src="../static/dist/drawingboard.min.js"></script>
+	<style>
+		#zip1-board {
+			width: 180px;
+			height: 200px;
+		}
+		#zip2-board {
+			width: 180px;
+			height: 200px;
+		}
+		#zip3-board {
+			width: 180px;
+			height: 200px;
+		}
+		#zip4-board {
+			width: 180px;
+			height: 200px;
+		}
+		#zip5-board {
+			width: 180px;
+			height: 200px;
+		}
+	</style>
   </head>
   <body style="background-color:#dee0e0">
+
 			<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-1">
@@ -49,124 +74,54 @@
 								<div class="col-md-1">
 								</div>
 								<div class="col-md-2">
-									<div class="card">
-										<!-- <h5 class="card-header">
-											Card title
-										</h5> -->
-										<div class="card-body">
-											<p class="card-text">
-													<div id="zip1"></div>
-													<style>
-														#zip1 {
-															width: 200px;
-															height: 100px;
-														}
-													</style>
-													<script>
-														var myBoard = new DrawingBoard.Board('zip1');
-													</script>
-											</p>
-										</div>
-										<!-- <div class="card-footer">
-											Card footer
-										</div> -->
-									</div>
+									<div class="board container-fluid no-padding" id="zip1-board"></div>
+									<script>
+									var simpleBoard = new DrawingBoard.Board('zip1-board', {
+										size: 4,
+										controls: true,
+										webStorage: false
+									});
+									</script>
 								</div>
 								<div class="col-md-2">
-									<div class="card">
-										<!-- <h5 class="card-header">
-											Card title
-										</h5> -->
-										<div class="card-body">
-											<p class="card-text">
-													<div id="zip2"></div>
-													<style>
-														#zip2 {
-															width: 200px;
-															height: 100px;
-														}
-													</style>
-													<script>
-														var myBoard = new DrawingBoard.Board('zip2');
-													</script>
-											</p>
-										</div>
-										<!-- <div class="card-footer">
-											Card footer
-										</div> -->
-									</div>
+										<div class="board container-fluid no-padding" id="zip2-board"></div>
+										<script>
+										var simpleBoard = new DrawingBoard.Board('zip2-board', {
+											size: 4,
+											controls: true,
+											webStorage: false
+										});
+										</script>
 								</div>
 								<div class="col-md-2">
-									<div class="card">
-										<!-- <h5 class="card-header">
-											Card title
-										</h5> -->
-										<div class="card-body">
-											<p class="card-text">
-													<div id="zip3"></div>
-													<style>
-														#zip3 {
-															width: 200px;
-															height: 100px;
-														}
-													</style>
-													<script>
-														var myBoard = new DrawingBoard.Board('zip3');
-													</script>
-											</p>
-										</div>
-										<!-- <div class="card-footer">
-											Card footer
-										</div> -->
-									</div>
+										<div class="board container-fluid no-padding" id="zip3-board"></div>
+										<script>
+										var simpleBoard = new DrawingBoard.Board('zip3-board', {
+											size: 4,
+											controls: true,
+											webStorage: false
+										});
+										</script>
 								</div>
 								<div class="col-md-2">
-									<div class="card">
-										<!-- <h5 class="card-header">
-											Card title
-										</h5> -->
-										<div class="card-body">
-											<p class="card-text">
-													<div id="zip4"></div>
-													<style>
-														#zip4 {
-															width: 200px;
-															height: 100px;
-														}
-													</style>
-													<script>
-														var myBoard = new DrawingBoard.Board('zip4');
-													</script>
-											</p>
-										</div>
-										<!-- <div class="card-footer">
-											Card footer
-										</div> -->
-									</div>
+										<div class="board container-fluid no-padding" id="zip4-board"></div>
+										<script>
+										var simpleBoard = new DrawingBoard.Board('zip4-board', {
+											size: 4,
+											controls: true,
+											webStorage: false
+										});
+										</script>
 								</div>
 								<div class="col-md-2">
-									<div class="card">
-										<!-- <h5 class="card-header">
-											Card title
-										</h5> -->
-										<div class="card-body">
-											<p class="card-text">
-													<div id="zip5"></div>
-													<style>
-														#zip5 {
-															width: 200px;
-															height: 100px;
-														}
-													</style>
-													<script>
-														var myBoard = new DrawingBoard.Board('zip5');
-													</script>
-											</p>
-										</div>
-										<!-- <div class="card-footer">
-											Card footer
-										</div> -->
-									</div>
+										<div class="board container-fluid no-padding" id="zip5-board"></div>
+										<script>
+										var simpleBoard = new DrawingBoard.Board('zip5-board', {
+											size: 4,
+											controls: true,
+											webStorage: false
+										});
+										</script>
 								</div>
 								<div class="col-md-1">
 								</div>
@@ -183,7 +138,9 @@
 						<div class="col-md-2"></div>
 					</div>
 				</div>
-    <script src="../static/js/jquery.min.js"></script>
+	
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <!-- <script src="../static/js/jquery.min.js"></script> -->
     <script src="../static/js/bootstrap.min.js"></script>
     <script src="../static/js/scripts.js"></script>
   </body>
