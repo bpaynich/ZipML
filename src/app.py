@@ -8,7 +8,7 @@ import json
 import math
 import warnings
 import gmaps.geojson_geometries
-  
+import yelp_fusion 
 from flask import Flask, jsonify, render_template, request
 
 # import sqlalchemy
@@ -48,9 +48,14 @@ def housing_query():
 def schools_query():
     return render_template("schools.html")
 
-@app.route("/chrime")
+@app.route("/crime")
 def chrime_query():
     return render_template("chrime.html")
+
+@app.route("/dinner")
+def dinner_query():
+    result =  yelp_fusion.main('dinner','85029')
+    return jsonify(result)
 
 if __name__ == "__main__":
     app.run(debug=True)

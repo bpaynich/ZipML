@@ -34,9 +34,10 @@
 		}
 	</style>
   </head>
-  <body style="background-color:#dee0e0">
-
+  <!-- <body style="background-color:#dee0e0"> -->
+  <body>
 			<div class="container-fluid">
+			<br/><br/>
 					<div class="row">
 						<div class="col-md-1">
 						</div>
@@ -49,22 +50,22 @@
 															<a class="nav-link active" href="/"><img src="../static/img/zip_15.png"class="img-thumbnail"></a>
 														</li>
 														<li class="nav-item">
-																<a class="nav-link active" href="/things"><img src="../static/img/things_15.png"class="img-thumbnail"></a>
+																<a class="nav-link active" href="/things"><img src="../static/img/things_15.png" class="img-thumbnail"></a>
 														</li>
 														<li class="nav-item">
-																<a class="nav-link active" href="/housing"><img src="../static/img/housing_15.png"class="img-thumbnail"></a>
+																<a class="nav-link active" href="/housing"><img src="../static/img/housing_15.png" class="img-thumbnail"></a>
 														</li>
 														<li class="nav-item">
-																<a class="nav-link active" href="/schools"><img src="../static/img/schools_15.png"class="img-thumbnail"></a>
+																<a class="nav-link active" href="/schools"><img src="../static/img/schools_15.png" class="img-thumbnail"></a>
 														</li>
 														<li class="nav-item">
-																<a class="nav-link active" href="/chrime"><img src="../static/img/chrime_15.png"class="img-thumbnail"></a>
+																<a class="nav-link active" href="/chrime"><img src="../static/img/chrime_15.png" class="img-thumbnail"></a>
 														</li>
 													</ul>
 								</div>
 							</div>
 							<br/><br/>
-
+							
 							<div class="row">
 									<div class="col-md-12">
 										<p>
@@ -76,50 +77,70 @@
 								<div class="col-md-2">
 									<div class="board container-fluid no-padding" id="zip1-board"></div>
 									<script>
-									var simpleBoard = new DrawingBoard.Board('zip1-board', {
+									var zip1Board = new DrawingBoard.Board('zip1-board', {
 										size: 4,
 										controls: true,
-										webStorage: false
+										webStorage: 'session',
+										controls: [
+										{ Navigation: { back: false, forward: false } },
+										'Download'
+										]
 									});
 									</script>
 								</div>
 								<div class="col-md-2">
 										<div class="board container-fluid no-padding" id="zip2-board"></div>
 										<script>
-										var simpleBoard = new DrawingBoard.Board('zip2-board', {
+										var zip2Board = new DrawingBoard.Board('zip2-board', {
 											size: 4,
 											controls: true,
-											webStorage: false
+											webStorage: 'session',
+											controls: [
+										{ Navigation: { back: false, forward: false } },
+										'Download'
+										]
 										});
 										</script>
 								</div>
 								<div class="col-md-2">
 										<div class="board container-fluid no-padding" id="zip3-board"></div>
 										<script>
-										var simpleBoard = new DrawingBoard.Board('zip3-board', {
+										var zip3Board = new DrawingBoard.Board('zip3-board', {
 											size: 4,
 											controls: true,
-											webStorage: false
+											webStorage: 'session',
+											controls: [
+										{ Navigation: { back: false, forward: false } },
+										'Download'
+										]
 										});
 										</script>
 								</div>
 								<div class="col-md-2">
 										<div class="board container-fluid no-padding" id="zip4-board"></div>
 										<script>
-										var simpleBoard = new DrawingBoard.Board('zip4-board', {
+										var zip4Board = new DrawingBoard.Board('zip4-board', {
 											size: 4,
 											controls: true,
-											webStorage: false
+											webStorage: 'session',
+											controls: [
+										{ Navigation: { back: false, forward: false } },
+										'Download'
+										]
 										});
 										</script>
 								</div>
 								<div class="col-md-2">
 										<div class="board container-fluid no-padding" id="zip5-board"></div>
 										<script>
-										var simpleBoard = new DrawingBoard.Board('zip5-board', {
+										var zip5Board = new DrawingBoard.Board('zip5-board', {
 											size: 4,
 											controls: true,
-											webStorage: false
+											webStorage: 'session',
+											controls: [
+										{ Navigation: { back: false, forward: false } },
+										'Download'
+										]
 										});
 										</script>
 								</div>
@@ -133,15 +154,36 @@
 						<div class="col-md-2"></div>
 						<div class="col-md-8">
 						<br/><br/>
-						<input class="btn btn-primary align-right text-center" type="button" value="Search my Zip">
+						<button class="btn btn-primary" onclick="clearfields()">Clear</button>
 						</div>
 						<div class="col-md-2"></div>
 					</div>
 				</div>
-	
+				<script>
+				function clearfields() {
+					console.log("CLEAR BUTTON")
+
+					//listen to an event
+					zip1Board.ev.trigger('board:imageDropped');
+
+					// //stop listening to it
+					zip1Board.ev.trigger('board:reset');	
+
+
+//you can also trigger new events
+zip1Board.ev.trigger('readme:example', 'what', 'up');
+
+//and listen to them
+zip1Board.ev.bind('readme:example', function(one, two) {
+    console.log(one, two); // 'what', 'up'
+});
+
+
+				}
+			
+				</script>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <!-- <script src="../static/js/jquery.min.js"></script> -->
-    <script src="../static/js/bootstrap.min.js"></script>
-    <script src="../static/js/scripts.js"></script>
+	<script src="../static/js/microevent.js"></script>
+  <script src="../static/js/scripts.js"></script>
   </body>
 </html>
