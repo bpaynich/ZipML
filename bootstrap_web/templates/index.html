@@ -26,9 +26,9 @@
   <link href="../static/css/freelancer.min.css" rel="stylesheet">
 
 	<!-- d3 JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script> -->
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
   <!-- DrawingBoard Scripts and styles -->
   <!-- <link rel="stylesheet" href="static/dist/drawingboard.min.css">
@@ -170,6 +170,11 @@
     </div> -->
 
       <h1 class="text-uppercase mb-0">Zip Info</h1>
+      <form method="POST">
+          <br>
+          <input  type="text" name="tag"><br>
+          <input class="btn btn-primary" type="submit" value="Submit">
+      </form>
       <hr class="star-light">
       <h2 class="font-weight-light mb-0">Enter your zip to find info on - Things-to-do - Housing - Crime - Schools</h2>
     </div>
@@ -360,10 +365,7 @@
             <hr class="star-dark mb-5">
             <!-- <img class="img-fluid mb-5" src="static/img/portfolio/cake.png" alt=""> -->
             <p class="mb-5">Local Restaurant information
-            <div id="restaurant_table" class="panel-body table table-sm">
-              </p>
-              No Restaurants Available
-            </div>
+            <div id="restaurant_table" class="panel-body table table-sm"></div>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
               Close</a>
@@ -384,11 +386,14 @@
           <div class="col-lg-8 mx-auto">
             <h2 class="text-secondary text-uppercase mb-0">Local Events</h2>
             <hr class="star-dark mb-5">
-            <!-- <img class="img-fluid mb-5" src="static/img/portfolio/circus.png" alt=""> -->
-            <p class="mb-5">Local Event information
-            <div id="tours_table" class="panel-body table table-sm">
-            </p>
+            <p class="mb-5">Things to do
+            Theaters
             <div id="theater_table" class="panel-body table table-sm"></div>
+            Local Tour Companies
+            <div id="tours_table" class="panel-body table table-sm"></p></div>
+            Stadiums
+            <div id="stadium_table" class="panel-body table table-sm"></p></div>
+            
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
               Close</a>

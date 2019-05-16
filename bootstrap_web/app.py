@@ -8,7 +8,6 @@ import json
 import requests
 import math
 import warnings
-import yelp
 import gmaps.geojson_geometries
 import yelp_fusion 
 from flask import Flask, jsonify, render_template, request
@@ -33,8 +32,11 @@ app = Flask(__name__)
 # Flask Routes
 #################################################
 
-@app.route("/")
+@app.route('/', methods=['GET', 'POST'])
 def main_query():
+    if request.method == 'POST':
+        # Then get the data from the form
+        zip_code = request.form['tag']
     return render_template("index.html")
 
 @app.route("/api/<term>/<zip_code>")
