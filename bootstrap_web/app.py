@@ -8,7 +8,7 @@ import json
 import requests
 import math
 import warnings
-import yelp
+# import yelp
 import gmaps.geojson_geometries
 import yelp_fusion 
 from flask import Flask, jsonify, render_template, request
