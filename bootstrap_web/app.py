@@ -9,18 +9,12 @@ import requests
 import math
 import warnings
 import gmaps.geojson_geometries
-import yelp_fusion 
+from uszipcode import SearchEngine
 from flask import Flask, jsonify, render_template, request
-
+from yelp_api import api_key
 # Hide warning messages
 from ipywidgets.embed import embed_minimal_html
 warnings.filterwarnings('ignore')
-
-#################################################
-# Yelp API Key
-#################################################
-
-api_key='1bH1i6hqL0TXbaFy8Jm4O7O5brL-iPCC5-0MvC_Wm18KDkFM0vD51t7EuuSfZeQF_i2FxDSZFwUZBP2mCsV9McVCUustTrkIGVISF4p-ZJLkwLL_XY_lEhLmeBzaXHYx'
 
 #################################################
 # Flask Setup
@@ -46,6 +40,15 @@ def resturant_query(term, zip_code):
     params = {'term': term,'location': zip_code}
     req=requests.get(url, params=params, headers=headers)
     return (req.text)
+
+@app.route("/api/housing/<zip_code>")
+def housing_query(zip_code):
+    search = SearchEngine(simple_zipcode=False)
+    zipcode = search.by_zipcode(zip_code)
+    zip_dict = zipcode.to_dict() # to dict
+    # zip_code = json.dumps(zip_dict)
+    # load_zip = json.loads(zip_code)
+    return jsonify(zip_dict)
 
 if __name__ == "__main__":
     app.run(debug=True)
