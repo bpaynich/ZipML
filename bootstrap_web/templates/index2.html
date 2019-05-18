@@ -11,20 +11,25 @@
   <title>ZipInfo</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"> -->
 
   <!-- Custom fonts for this template -->
-  <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
   <!-- Plugin CSS -->
-  <link href="static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+  <link href="../static/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
   <!-- Custom styles for this template -->
-  <link href="static/css/freelancer.min.css" rel="stylesheet">
+  <link href="../static/css/freelancer.min.css" rel="stylesheet">
 
+	<!-- d3 JS -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script> -->
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   <!-- DrawingBoard Scripts and styles -->
   <link rel="stylesheet" href="static/dist/drawingboard.min.css">
 	<script src="static/dist/drawingboard.min.js"></script>
@@ -65,7 +70,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Things">Things to do</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Things to do</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Housing">Housing</a>
@@ -90,7 +95,7 @@
         </div>								
       <div class="col-md-1">
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2" style="background-color: white">
         <div class="board container-fluid no-padding" id="zip1-board"></div>
         <script>
         var zip1Board = new DrawingBoard.Board('zip1-board', {
@@ -104,7 +109,7 @@
         });
         </script>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2" style="background-color: white">
           <div class="board container-fluid no-padding" id="zip2-board"></div>
           <script>
           var zip2Board = new DrawingBoard.Board('zip2-board', {
@@ -118,7 +123,7 @@
           });
           </script>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2" style="background-color: white">
           <div class="board container-fluid no-padding" id="zip3-board"></div>
           <script>
           var zip3Board = new DrawingBoard.Board('zip3-board', {
@@ -132,7 +137,7 @@
           });
           </script>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2" style="background-color: white">
           <div class="board container-fluid no-padding" id="zip4-board"></div>
           <script>
           var zip4Board = new DrawingBoard.Board('zip4-board', {
@@ -146,7 +151,7 @@
           });
           </script>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2" style="background-color: white">
           <div class="board container-fluid no-padding" id="zip5-board"></div>
           <script>
           var zip5Board = new DrawingBoard.Board('zip5-board', {
@@ -164,9 +169,12 @@
       </div>
     </div>
 
-
-
       <h1 class="text-uppercase mb-0">Zip Info</h1>
+      <form method="POST">
+          <br>
+          <input type="text" name="tag"><br>
+          <input class="btn btn-primary" type="submit" value="Submit">
+      </form>
       <hr class="star-light">
       <h2 class="font-weight-light mb-0">Enter your zip to find info on - Things-to-do - Housing - Crime - Schools</h2>
     </div>
@@ -185,7 +193,7 @@
                 <i class="fas fa-search-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="../bootstrap_web/static/img/portfolio/cabin.png" alt="">
+            <img class="img-fluid" src="static/img/portfolio/cabin.png" alt="">
           </a>
         </div>
         <div class="col-md-6 col-lg-4">
@@ -195,7 +203,7 @@
                 <i class="fas fa-search-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="../bootstrap_web/static/img/portfolio/cake.png" alt="">
+            <img class="img-fluid" src="static/img/portfolio/cake.png" alt="">
           </a>
         </div>
         <div class="col-md-6 col-lg-4">
@@ -205,7 +213,7 @@
                 <i class="fas fa-search-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="../bootstrap_web/static/img/portfolio/circus.png" alt="">
+            <img class="img-fluid" src="static/img/portfolio/circus.png" alt="">
           </a>
         </div>
         <div class="col-md-6 col-lg-4">
@@ -215,7 +223,7 @@
                 <i class="fas fa-search-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="../bootstrap_web/static/img/portfolio/game.png" alt="">
+            <img class="img-fluid" src="static/img/portfolio/game.png" alt="">
           </a>
         </div>
         <div class="col-md-6 col-lg-4">
@@ -225,7 +233,7 @@
                 <i class="fas fa-search-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="../bootstrap_web/static/img/portfolio/safe.png" alt="">
+            <img class="img-fluid" src="static/img/portfolio/safe.png" alt="">
           </a>
         </div>
         <div class="col-md-6 col-lg-4">
@@ -235,7 +243,7 @@
                 <i class="fas fa-search-plus fa-3x"></i>
               </div>
             </div>
-            <img class="img-fluid" src="../bootstrap_web/static/img/portfolio/submarine.png" alt="">
+            <img class="img-fluid" src="static/img/portfolio/submarine.png" alt="">
           </a>
         </div>
       </div>
@@ -249,14 +257,14 @@
       <hr class="star-light mb-5">
       <div class="row">
         <div class="col-lg-4 ml-auto">
-          <p class="lead">Zip Info utilizes a machine learning algorythm for character recognition.  Your written character is sent through our algorythm to derive the actual text.</p>
+          <p class="lead">Zip Info utilizes a machine learning algorithm for character recognition.  Your written character is sent through our algorithm to derive the actual text.</p>
         </div>
         <div class="col-lg-4 mr-auto">
           <p class="lead">Once then text is derived we use a variety of public data APIs to serve up information about your local community based on the zip code you provide.</p>
         </div>
       </div>
       <div class="text-center mt-4">
-        <a class="btn btn-xl btn-outline-light" href="#">
+        <a class="btn btn-xl btn-outline-light" href="https://github.com/bpaynich/ZipML">
           <i class="fas fa-download mr-2"></i>
           Open GitHub
         </a>
@@ -265,7 +273,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer text-center">
+  <!-- <footer class="footer text-center">
     <div class="container">
       <div class="row">
         <div class="col-md-4 mb-5 mb-lg-0">
@@ -305,11 +313,11 @@
         </div>
       </div>
     </div>
-  </footer>
+  </footer> -->
 
   <div class="copyright py-4 text-center text-white">
     <div class="container">
-      <small>Copyright &copy; Your Website 2019</small>
+      <small>Copyright &copy; ZIP INFO 2019</small>
     </div>
   </div>
 
@@ -331,13 +339,14 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
+            <h2 class="text-secondary text-uppercase mb-1">Housing Information</h2>
             <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="../bootstrap_web/static/img/portfolio/cabin.png" alt="">
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+            <!-- <img class="img-fluid mb-5" src="static/img/portfolio/cabin.png" alt=""> -->
+            <p class="mb-5">Housing Data for the zipcode </p>
+            <div id="pie"></div>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
-              Close Project</a>
+              Close</a>
           </div>
         </div>
       </div>
@@ -353,13 +362,14 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
+            <h2 class="text-secondary text-uppercase mb-0">Local Restaurants</h2>
             <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="../bootstrap_web/static/img/portfolio/cake.png" alt="">
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+            <!-- <img class="img-fluid mb-5" src="static/img/portfolio/cake.png" alt=""> -->
+            <p class="mb-5">Local Restaurant information
+            <div id="restaurant_table" class="panel-body table table-sm"></div>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
-              Close Project</a>
+              Close</a>
           </div>
         </div>
       </div>
@@ -375,13 +385,19 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
+            <h2 class="text-secondary text-uppercase mb-0">Local Events</h2>
             <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="../bootstrap_web/static/img/portfolio/circus.png" alt="">
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+            <p class="mb-5">Things to do
+            Theaters
+            <div id="theater_table" class="panel-body table table-sm"></div>
+            Local Tour Companies
+            <div id="tours_table" class="panel-body table table-sm"></p></div>
+            Stadiums
+            <div id="stadium_table" class="panel-body table table-sm"></p></div>
+
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
-              Close Project</a>
+              Close</a>
           </div>
         </div>
       </div>
@@ -397,13 +413,15 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
+            <h2 class="text-secondary text-uppercase mb-0">Sport Information</h2>
             <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="../bootstrap_web/static/img/portfolio/game.png" alt="">
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+            <!-- <img class="img-fluid mb-5" src="static/img/portfolio/game.png" alt=""> -->
+            <p class="mb-5">Local Sport Information
+            <div id="stadium_table" class="panel-body table table-sm"> 
+            </p>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
-              Close Project</a>
+              Close</a>
           </div>
         </div>
       </div>
@@ -419,13 +437,15 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
+            <h2 class="text-secondary text-uppercase mb-0">Local Crime Information</h2>
             <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="../bootstrap_web/static/img/portfolio/safe.png" alt="">
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+            <!-- <img class="img-fluid mb-5" src="static/img/portfolio/safe.png" alt=""> -->
+            <p class="mb-5">Local Crime Information
+                <div id="crime_table" class="panel-body table table-sm">
+            </p>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
-              Close Project</a>
+              Close</a>
           </div>
         </div>
       </div>
@@ -441,10 +461,10 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2 class="text-secondary text-uppercase mb-0">Project Name</h2>
+            <h2 class="text-secondary text-uppercase mb-0">Travel</h2>
             <hr class="star-dark mb-5">
-            <img class="img-fluid mb-5" src="../bootstrap_web/static/img/portfolio/submarine.png" alt="">
-            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+            <!-- <img class="img-fluid mb-5" src="static/img/portfolio/submarine.png" alt=""> -->
+            <p class="mb-5">Local Sites</p>
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
               Close Project</a>
@@ -455,25 +475,29 @@
   </div>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="static/vendor/jquery/jquery.min.js"></script>
-  <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="../static/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="../static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
   <!-- Contact Form JavaScript -->
-  <script src="static/js/jqBootstrapValidation.js"></script>
-  <script src="static/js/contact_me.js"></script>
+  <script src="../static/js/jqBootstrapValidation.js"></script>
+  <!-- <script src="static/js/contact_me.js"></script> -->
 
   <!-- Custom scripts for this template -->
-  <script src="static/js/freelancer.min.js"></script>
+  <script src="../static/js/freelancer.min.js"></script>
+
+  <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
   <!-- DrawingBoard scripts -->
   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script src="static/js/microevent.js"></script>
-  <script src="static/js/scripts.js"></script>
-
+	<script src="../static/js/microevent.js"></script>
+  <script src="../static/js/scripts.js"></script>
+  <script src="../static/js/index.js"></script>
+  <script src="../static/js/demographics.js"></script>
 </body>
 
 </html>

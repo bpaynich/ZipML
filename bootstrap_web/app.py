@@ -31,6 +31,7 @@ def main_query():
     if request.method == 'POST':
         # Then get the data from the form
         zip_code = request.form['tag']
+        # print(zip_code)
     return render_template("index.html")
 
 @app.route("/api/<term>/<zip_code>")
