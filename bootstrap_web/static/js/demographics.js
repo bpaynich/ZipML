@@ -6,7 +6,7 @@ function buildEmploymentStatus(zip_code) {
     
         d3.json(url, function(data) {
         console.log("Employment_status");
-        console.log(data.employment_status.key);
+        console.log(data.employment_status);
         console.log("End Employment_status");
         // Build a Pie Chart
       
