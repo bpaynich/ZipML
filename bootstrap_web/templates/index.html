@@ -35,25 +35,10 @@
 	<script src="static/dist/drawingboard.min.js"></script>
 	<style>
 		#zip1-board {
-			width: 180px;
+			width: 800px;
 			height: 200px;
 		}
-		#zip2-board {
-			width: 180px;
-			height: 200px;
-		}
-		#zip3-board {
-			width: 180px;
-			height: 200px;
-		}
-		#zip4-board {
-			width: 180px;
-			height: 200px;
-		}
-		#zip5-board {
-			width: 180px;
-			height: 200px;
-		}
+	
 	</style>
 </head>
 
@@ -70,16 +55,13 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item mx-0 mx-lg-1">
-<<<<<<< HEAD
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Things to do</a>
-=======
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Things">Demographics</a>
->>>>>>> eaafa84f95e59a1fd1ea0b9ad4cf6a108784e5b9
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Search Items</a>
+            <!-- <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Things">Demographics</a> -->
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Housing">Housing</a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About Zip Info</a>
           </li>
-          <li class="nav-item mx-0 mx-lg-1">
+          <!-- <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Schools">Restaurants</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
@@ -89,14 +71,9 @@
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Crime">Sports</a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-<<<<<<< HEAD
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Crime">Crime Stats</a>
-          </li>
-=======
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#Crime">Weather</a>
-          </li>
+          </li> -->
         
->>>>>>> eaafa84f95e59a1fd1ea0b9ad4cf6a108784e5b9
         </ul>
       </div>
     </div>
@@ -109,9 +86,15 @@
       <div class="row">
         <div class="col-md-12">
         </div>								
+
+      <!-- DRAWING BOARD -->
       <div class="col-md-1">
       </div>
-      <div class="col-md-2" style="background-color: white">
+      <div class="col-md-10" >
+
+          <h1 class="text-uppercase mb-0">Zip Info</h1>
+          <br/>
+
         <div class="board container-fluid no-padding" id="zip1-board"></div>
         <script>
         var zip1Board = new DrawingBoard.Board('zip1-board', {
@@ -125,67 +108,10 @@
         });
         </script>
       </div>
-      <div class="col-md-2" style="background-color: white">
-          <div class="board container-fluid no-padding" id="zip2-board"></div>
-          <script>
-          var zip2Board = new DrawingBoard.Board('zip2-board', {
-            size: 4,
-            controls: true,
-            webStorage: 'session',
-            controls: [
-          { Navigation: { back: false, forward: false } },
-          'Download'
-          ]
-          });
-          </script>
-      </div>
-      <div class="col-md-2" style="background-color: white">
-          <div class="board container-fluid no-padding" id="zip3-board"></div>
-          <script>
-          var zip3Board = new DrawingBoard.Board('zip3-board', {
-            size: 4,
-            controls: true,
-            webStorage: 'session',
-            controls: [
-          { Navigation: { back: false, forward: false } },
-          'Download'
-          ]
-          });
-          </script>
-      </div>
-      <div class="col-md-2" style="background-color: white">
-          <div class="board container-fluid no-padding" id="zip4-board"></div>
-          <script>
-          var zip4Board = new DrawingBoard.Board('zip4-board', {
-            size: 4,
-            controls: true,
-            webStorage: 'session',
-            controls: [
-          { Navigation: { back: false, forward: false } },
-          'Download'
-          ]
-          });
-          </script>
-      </div>
-      <div class="col-md-2" style="background-color: white">
-          <div class="board container-fluid no-padding" id="zip5-board"></div>
-          <script>
-          var zip5Board = new DrawingBoard.Board('zip5-board', {
-            size: 4,
-            controls: true,
-            webStorage: 'session',
-            controls: [
-          { Navigation: { back: false, forward: false } },
-          'Download'
-          ]
-          });
-          </script>
-      </div>
       <div class="col-md-1">
       </div>
     </div>
 
-      <h1 class="text-uppercase mb-0">Zip Info</h1>
       <form method="POST">
           <br>
           <input type="text" name="tag"><br>
@@ -367,12 +293,7 @@
             <h2 class="text-secondary text-uppercase mb-1">Housing Information</h2>
             <hr class="star-dark mb-5">
             <!-- <img class="img-fluid mb-5" src="static/img/portfolio/cabin.png" alt=""> -->
-<<<<<<< HEAD
-            <p class="mb-5">Housing Data for the zipcode </p>
-            <div id="pie"></div>
-=======
             <p class="mb-5">Housing Information for the Zipcode </p>
->>>>>>> eaafa84f95e59a1fd1ea0b9ad4cf6a108784e5b9
             <a class="btn btn-primary btn-lg rounded-pill portfolio-modal-dismiss" href="#">
               <i class="fa fa-close"></i>
               Close</a>
