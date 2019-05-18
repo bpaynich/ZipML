@@ -1,6 +1,6 @@
-zip_code = '90210';
+zip_code = '10010';
 
-function buildAnnualIndividualEarnings(zip_code) {
+function buildHousingOccupancy(zip_code) {
 
         const url = "/api/housing/" + zip_code;
     
@@ -9,9 +9,9 @@ function buildAnnualIndividualEarnings(zip_code) {
         // Build a Pie Chart
         var x_array = [];
         var y_array = [];
-        for (var i = 0; i < 9; i++) { 
-          x = data.annual_individual_earnings[0].values[i].x
-          y = data.annual_individual_earnings[0].values[i].y
+        for (var i = 0; i < 4; i++) { 
+          x = data.housing_occupancy[0].values[i].x
+          y = data.housing_occupancy[0].values[i].y
           x_array.push(x);
           y_array.push(y);
         }
@@ -32,12 +32,12 @@ function buildAnnualIndividualEarnings(zip_code) {
           width: 600
         };
     
-        Plotly.newPlot("annual_individual_earnings_pie", data1, layout1);
+        Plotly.newPlot("housing_occupancy", data1, layout1);
         
     });
 };
 
-function buildEmploymentStatus(zip_code) {
+function buildHousingType(zip_code) {
 
   const url = "/api/housing/" + zip_code;
 
@@ -47,8 +47,8 @@ function buildEmploymentStatus(zip_code) {
   var x_array = [];
   var y_array = [];
   for (var i = 0; i < 3; i++) { 
-    x = data.employment_status[0].values[i].x
-    y = data.employment_status[0].values[i].y
+    x = data.housing_type[0].values[i].x
+    y = data.housing_type[0].values[i].y
     x_array.push(x);
     y_array.push(y);
   }
@@ -63,18 +63,18 @@ function buildEmploymentStatus(zip_code) {
   var data1 = [trace1];
 
   var layout1 = {
-    title: 'Employment Status',
+    title: 'Housing Type',
     showlegend: true,
     height: 600,
     width: 600
   };
 
-  Plotly.newPlot("employment_status_pie", data1, layout1);
+  Plotly.newPlot("housing_type", data1, layout1);
   
 });
 };
 
-function buildAverageHouseholdIncomeOverTime(zip_code) {
+function buildOwnerOccupiedHomeValues(zip_code) {
 
   const url = "/api/housing/" + zip_code;
 
@@ -83,8 +83,8 @@ function buildAverageHouseholdIncomeOverTime(zip_code) {
   var x3_array = [];
   var y3_array = [];
   for (var i = 0; i < 10; i++) { 
-    x = data.average_household_income_over_time[0].values[i].x
-    y = data.average_household_income_over_time[0].values[i].y
+    x = data.owner_occupied_home_values[0].values[i].x
+    y = data.owner_occupied_home_values[0].values[i].y
     x3_array.push(x);
     y3_array.push(y);
   }
@@ -109,7 +109,7 @@ function buildAverageHouseholdIncomeOverTime(zip_code) {
   var data = [trace1];
   
   var layout = {
-    title: 'Average Household income over time',
+    title: 'Owner Occupied Home Values',
     xaxis: {
       tickangle: -45
     },
@@ -121,11 +121,11 @@ function buildAverageHouseholdIncomeOverTime(zip_code) {
     },
   };
   
-  Plotly.newPlot("average_household_income_over_time", data, layout);
+  Plotly.newPlot("owner_occupied_home_values", data, layout);
   
 });
 };
 
-buildAnnualIndividualEarnings(zip_code);
-buildEmploymentStatus(zip_code);
-buildAverageHouseholdIncomeOverTime(zip_code);
+buildHousingOccupancy(zip_code);
+buildHousingType(zip_code);
+buildOwnerOccupiedHomeValues(zip_code);
