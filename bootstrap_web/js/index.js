@@ -1,5 +1,22 @@
 zip_code = '85021'
 
+// d3.json("/data").then(data => {
+  
+//   var tbody = d3.select("tbody");
+//   data.forEach(cycle => {
+
+//       var row = tbody.append("tr");
+      
+//       Object.entries(cycle).forEach(([key, value])=> {
+
+//         if (column.includes(key)) {
+              
+//               row.append("td").text(value);
+//           }
+//         });
+//        });
+//   });
+
 function buildRestaurantData(zip_code) {
 
   // Build the metadata panel
@@ -7,15 +24,17 @@ function buildRestaurantData(zip_code) {
  
   let tbody = d3.select("#restaurant_table");
 
-    tbody.html("");
+    // tbody.html("");
 
-    d3.json(url).then(function(data) {
-      console.log(data);
-    //   tbody.html('<a><img src="static/img/'+ ticker +'.png"></a><br/>');
+    d3.json(url).then(data => {
+     var row = tbody.append("tr");
+      // console.log(data);
       Object.entries(data).forEach(function([key, value]) {
-        tbody.append("tr");
-         tbody.append("td").text(key);
-        tbody.append("td").text(value);
+        // Object.values(data).forEach(function(value) { 
+      // tbody.append("tr");
+        //  tbody.append("td").text(key);
+        //  console.log(key);
+        row.append("td").text(value);
       });
     });
   };

@@ -7,7 +7,8 @@ console.log(zip_code);
     // Build the metadata panel
     const url = "/api/restaurants/" + zip_code;
       //tbody.html("");
-      d3.json(url, function (data) {
+      d3.json(url, function(data) {
+        var columnHead=["Name", "Address", "City", 'State', "Phone", "Rating", "# of Reviews"];
 
         function tabulate(data, columns) {
               var table = d3.select('#restaurant_table').append('table')
@@ -17,7 +18,7 @@ console.log(zip_code);
               // append the header row
               thead.append('tr')
                 .selectAll('th')
-                .data(columns).enter()
+                .data(columnHead).enter()
                 .append('th')
                   .text(function (column) { return column; });
       
@@ -36,14 +37,21 @@ console.log(zip_code);
                 })
                 .enter()
                 .append('td')
-                  .text(function (d) { return d.value; });
+                .text(function (d) { return d.value; });
       
             return table;
           }
       
           // render the table(s)
-          tabulate(data, ['name','display_address', 'display_phone', 'rating', 'review_count']);
-      
+          for (var i=0; i<data.businesses.length; i++) {
+              data.businesses[i]["address"]= data.businesses[i]['location']['address1']
+              data.businesses[i]["city"]=data.businesses[i]['location']['city']
+              data.businesses[i]["state"]=data.businesses[i]['location']['state']
+          }
+
+
+          tabulate(data, ['name','address', 'city', 'state', 'display_phone', 'rating', 'review_count']);
+
       });
           
     };
@@ -54,6 +62,7 @@ console.log(zip_code);
     const url = "/api/theater/" + zip_code;
   
       d3.json(url, function (data) {
+      var columnHead=["Name", "Address", "City", 'State', "Phone", "Price Range", "Rating", "# of Reviews"];
 
         function tabulate(data, columns) {
               var table = d3.select('#theater_table').append('table')
@@ -63,7 +72,7 @@ console.log(zip_code);
               // append the header row
               thead.append('tr')
                 .selectAll('th')
-                .data(columns).enter()
+                .data(columnHead).enter()
                 .append('th')
                   .text(function (column) { return column; });
       
@@ -88,7 +97,13 @@ console.log(zip_code);
           }
       
           // render the table(s)
-          tabulate(data, ['name','location', 'price', 'rating', 'review_count']);
+          for (var i=0; i<data.businesses.length; i++) {
+            data.businesses[i]["address"]= data.businesses[i]['location']['address1']
+            data.businesses[i]["city"]=data.businesses[i]['location']['city']
+            data.businesses[i]["state"]=data.businesses[i]['location']['state']
+        }
+          tabulate(data, ['name','address', 'city', 'state', 'display_phone', 'price', 'rating', 'review_count']);
+          
       });
     };
 
@@ -99,7 +114,7 @@ console.log(zip_code);
        
         //   tbody.html("");
           d3.json(url, function (data) {
-
+          var columnHead=["Name", "Address", "City", 'State', "Phone", "Price Range", "Rating", "# of Reviews"];
             function tabulate(data, columns) {
                   var table = d3.select('#tours_table').append('table')
                   var thead = table.append('thead')
@@ -108,7 +123,7 @@ console.log(zip_code);
                   // append the header row
                   thead.append('tr')
                     .selectAll('th')
-                    .data(columns).enter()
+                    .data(columnHead).enter()
                     .append('th')
                       .text(function (column) { return column; });
           
@@ -133,7 +148,12 @@ console.log(zip_code);
               }
           
               // render the table(s)
-              tabulate(data, ['name','location', 'price', 'rating', 'review_count']);
+              for (var i=0; i<data.businesses.length; i++) {
+                data.businesses[i]["address"]= data.businesses[i]['location']['address1']
+                data.businesses[i]["city"]=data.businesses[i]['location']['city']
+                data.businesses[i]["state"]=data.businesses[i]['location']['state']
+            }
+              tabulate(data, ['name','address', 'city', 'state', 'display_phone', 'price', 'rating', 'review_count']);
           });
         };
 
@@ -144,7 +164,8 @@ console.log(zip_code);
        
         //   tbody.html("");
           d3.json(url, function (data) {
-
+            var columnHead=["Name", "Address", "City", 'State', "Phone", "Price Range", "Rating", "# of Reviews"];
+      
             function tabulate(data, columns) {
                   var table = d3.select('#stadium_table').append('table')
                   var thead = table.append('thead')
@@ -153,7 +174,7 @@ console.log(zip_code);
                   // append the header row
                   thead.append('tr')
                     .selectAll('th')
-                    .data(columns).enter()
+                    .data(columnHead).enter()
                     .append('th')
                       .text(function (column) { return column; });
           
@@ -178,7 +199,12 @@ console.log(zip_code);
               }
           
               // render the table(s)
-              tabulate(data, ['name','location', 'price', 'rating', 'review_count']);
+              for (var i=0; i<data.businesses.length; i++) {
+                data.businesses[i]["address"]= data.businesses[i]['location']['address1']
+                data.businesses[i]["city"]=data.businesses[i]['location']['city']
+                data.businesses[i]["state"]=data.businesses[i]['location']['state']
+            }
+              tabulate(data, ['name','address', 'city', 'state', 'display_phone', 'price', 'rating', 'review_count']);
           });
         };
 
