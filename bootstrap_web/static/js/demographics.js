@@ -1,5 +1,3 @@
-zip_code = '85286';
-
 function buildAnnualIndividualEarnings(zip_code) {
 
   const url = "/api/housing/" + zip_code;
