@@ -51,5 +51,16 @@ def housing_query(zip_code):
     # load_zip = json.loads(zip_code)
     return jsonify(zip_dict)
 
+@app.route('/testbench', methods=['GET', 'POST'])
+def testbench_query():
+    if request.method == 'POST':
+        # Then get the data from the form
+        zip_code = request.form['tag']
+        # print(zip_code)
+    return render_template("index.html")
+
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
