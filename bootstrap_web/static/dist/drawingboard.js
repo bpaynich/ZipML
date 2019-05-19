@@ -621,13 +621,20 @@ DrawingBoard.Board.prototype = {
 		return this.canvas.toDataURL("image/png");
 	},
 
+	// downloadImg: function() {
+	// 	var img = this.getImg();
+	// 	img = img.replace("image/png", "image/octet-stream");
+	// 	window.location.href = img;
+	// },
+
 	downloadImg: function() {
 		var img = this.getImg();
 		img = img.replace("image/png", "image/octet-stream");
-		window.location.href = img;
+		var link = document.createElement('a');
+		link.download = "zip.png";
+		link.href = img;
+		link.click();
 	},
-
-
 
 	/**
 	 * WebStorage handling : save and restore to local or session storage
@@ -1361,7 +1368,7 @@ DrawingBoard.Control.Size = DrawingBoard.Control.extend({
 });
 DrawingBoard.Control.Download = DrawingBoard.Control.extend({
 
-	name: 'download',
+	name: 'test',
 
 	initialize: function() {
 		this.$el.append('<button class="drawing-board-control-download-button"></button>');

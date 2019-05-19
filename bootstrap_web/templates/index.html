@@ -32,7 +32,7 @@
   <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   <!-- DrawingBoard Scripts and styles -->
   <link rel="stylesheet" href="static/dist/drawingboard.min.css">
-	<script src="static/dist/drawingboard.min.js"></script>
+	<script src="static/dist/drawingboard.js"></script>
 	<style>
 		#zip-board {
 			width: 800px;
@@ -85,7 +85,7 @@
             var zip1Board = new DrawingBoard.Board('zip-board', {
               size: 12,
               controls: true,
-              webStorage: 'session',
+              webStorage: 'local',
               controls: [
               { Navigation: { back: false, forward: false } },
               'Download'
