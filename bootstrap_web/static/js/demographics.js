@@ -1,76 +1,40 @@
-<<<<<<< HEAD
-// zip_code = '85286';
-
-// function buildEmploymentStatus(zip_code) {
-=======
-zip_code = '90210';
-
 function buildAnnualIndividualEarnings(zip_code) {
->>>>>>> 63f96aeb6de59e6a2def3d1fe2409f183f64b581
 
-//         const url = "/api/housing/" + zip_code;
-    
-<<<<<<< HEAD
-//         d3.json(url, function(data) {
-//         console.log("Employment_status");
-//         console.log(data.employment_status.key);
-//         console.log("End Employment_status");
-//         // Build a Pie Chart
-      
-//         var trace1 = {
-//           values: data.employment_status.map(d => d.y),
-//           labels: data.employment_status.map(d => d.x),
-//           type: 'pie'
-//         };
-=======
-        d3.json(url, function(data) {
+  const url = "/api/housing/" + zip_code;
 
-        // Build a Pie Chart
-        var x_array = [];
-        var y_array = [];
-        for (var i = 0; i < 9; i++) { 
-          x = data.annual_individual_earnings[0].values[i].x
-          y = data.annual_individual_earnings[0].values[i].y
-          x_array.push(x);
-          y_array.push(y);
-        }
+  d3.json(url, function(data) {
 
-        var trace1 = {
-          values: y_array,
-          labels: x_array,
-          type: 'pie'
-        };
->>>>>>> 63f96aeb6de59e6a2def3d1fe2409f183f64b581
-    
-//         // data
-//         var data1 = [trace1];
-    
-<<<<<<< HEAD
-//         var layout1 = {
-//           title: 'Employment Status',
-//           showlegend: true,
-//           height: 600,
-//           width: 600
-//         };
-    
-//         Plotly.newPlot("pie", data1, layout1);
-=======
-        var layout1 = {
-          title: 'Annual Individual Earnings',
-          showlegend: true,
-          height: 600,
-          width: 600
-        };
-    
-        Plotly.newPlot("annual_individual_earnings_pie", data1, layout1);
->>>>>>> 63f96aeb6de59e6a2def3d1fe2409f183f64b581
-        
-//     });
-// };
+  // Build a Pie Chart
+  var x_array = [];
+  var y_array = [];
+  for (var i = 0; i < 3; i++) { 
+    x = data.annual_individual_earnings[0].values[i].x
+    y = data.annual_individual_earnings[0].values[i].y
+    x_array.push(x);
+    y_array.push(y);
+  }
 
-<<<<<<< HEAD
-// buildEmploymentStatus(zip_code);
-=======
+  var trace1 = {
+    values: y_array,
+    labels: x_array,
+    type: 'pie'
+  };
+
+  // data
+  var data1 = [trace1];
+
+  var layout1 = {
+    title: 'Employment Status',
+    showlegend: true,
+    height: 600,
+    width: 600
+  };
+
+  Plotly.newPlot("annual_individual_earnings", data1, layout1);
+  
+});
+};
+
 function buildEmploymentStatus(zip_code) {
 
   const url = "/api/housing/" + zip_code;
@@ -95,7 +59,6 @@ function buildEmploymentStatus(zip_code) {
 
   // data
   var data1 = [trace1];
->>>>>>> 63f96aeb6de59e6a2def3d1fe2409f183f64b581
 
   var layout1 = {
     title: 'Employment Status',
@@ -104,7 +67,7 @@ function buildEmploymentStatus(zip_code) {
     width: 600
   };
 
-  Plotly.newPlot("employment_status_pie", data1, layout1);
+  Plotly.newPlot("employment_status", data1, layout1);
   
 });
 };

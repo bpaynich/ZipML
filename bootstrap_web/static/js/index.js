@@ -1,8 +1,4 @@
-//  var zip_code = document.getElementById("tag");
-zip_code = '85027';
-// console.log(zip_code); 
-
-  function buildRestaurantData(zip_code) {
+function buildRestaurantData(zip_code) {
 
     // Build the metadata panel
     const url = "/api/restaurants/" + zip_code;

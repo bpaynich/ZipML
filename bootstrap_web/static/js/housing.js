@@ -1,5 +1,3 @@
-zip_code = '10010';
-
 function buildHousingOccupancy(zip_code) {
 
         const url = "/api/housing/" + zip_code;

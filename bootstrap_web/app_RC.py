@@ -15,8 +15,7 @@ from yelp_api import api_key
 # Hide warning messages
 from ipywidgets.embed import embed_minimal_html
 warnings.filterwarnings('ignore')
-import finalsplt
-import predictFullString
+from predictFullString import predict
 
 #################################################
 # Flask Setup
@@ -30,10 +29,10 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def main_query():
-    # if request.method == 'POST':
-    #     # Then get the data from the form
-    #     zip_code = request.form['tag']
-    #     # print(zip_code)
+    if request.method == 'POST':
+        # Then get the data from the form
+        zip_code = request.form['tag']
+        # print(zip_code)
     return render_template("index.html")
 
 @app.route("/api/<term>/<zip_code>")
@@ -53,17 +52,10 @@ def housing_query(zip_code):
     # load_zip = json.loads(zip_code)
     return jsonify(zip_dict)
 
-
-
-@app.route('/submit', methods=['GET', 'POST'])
+@app.route('/testbench')
 def testbench_query():
-    if request.method == 'GET':
-        finalsplt.split("zip.png")
-        zip_code = predictFullString.predict("./")
-        # Then get the data from the form
-        #zip_code = request.form['tag']
-        print(zip_code)
-    return render_template("index.html",zip_code=zip_code)
+    zipcode = predict("./")
+    return render_template("index.html")
 
 
 

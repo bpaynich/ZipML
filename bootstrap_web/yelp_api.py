@@ -1,3 +1,1 @@
 api_key='1bH1i6hqL0TXbaFy8Jm4O7O5brL-iPCC5-0MvC_Wm18KDkFM0vD51t7EuuSfZeQF_i2FxDSZFwUZBP2mCsV9McVCUustTrkIGVISF4p-ZJLkwLL_XY_lEhLmeBzaXHYx'
-
-owm_key ='151d99e47afc25dafce4fca8ec299da8'
