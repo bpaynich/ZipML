@@ -11,7 +11,7 @@ import warnings
 import gmaps.geojson_geometries
 from uszipcode import SearchEngine
 from flask import Flask, jsonify, render_template, request
-from yelp_api import api_key
+from yelp_api import api_key, owm_key
 # Hide warning messages
 from ipywidgets.embed import embed_minimal_html
 warnings.filterwarnings('ignore')
@@ -44,6 +44,14 @@ def resturant_query(term, zip_code):
     req=requests.get(url, params=params, headers=headers)
     return (req.text)
 
+@app.route("/api/weather/<zip_code>")
+def weather_query(zip_code):
+    base_url = "http://api.openweathermap.org/data/2.5/weather?"
+    units = "imperial"
+    query_url = f"{base_url}appid={owm_key}&zip={zip_code}&units={units}"
+    data = requests.get(query_url).json()
+    return data
+
 @app.route("/api/housing/<zip_code>")
 def housing_query(zip_code):
     search = SearchEngine(simple_zipcode=False)
@@ -52,7 +60,6 @@ def housing_query(zip_code):
     # zip_code = json.dumps(zip_dict)
     # load_zip = json.loads(zip_code)
     return jsonify(zip_dict)
-
 
 
 @app.route('/submit', methods=['GET', 'POST'])
