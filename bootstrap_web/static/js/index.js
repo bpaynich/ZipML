@@ -1,11 +1,13 @@
+// zip_code = '85021'
+
 function buildRestaurantData(zip_code) {
 
     // Build the metadata panel
-    const url = "/api/restaurants/" + zipcode;
-      //tbody.html("");
+    const url = "/api/restaurants/" + zip_code;
+
       d3.json(url, function(data) {
         var columnHead=["Name", "Address", "City", 'State', "Phone", "Rating", "# of Reviews"];
-
+        // tbody.html("");
         function tabulate(data, columns) {
               var table = d3.select('#restaurant_table').append('table')
               var thead = table.append('thead')
@@ -55,11 +57,11 @@ function buildRestaurantData(zip_code) {
   function buildTheatersData(zipcode) {
 
     // Build the metadata panel
-    const url = "/api/theater/" + zipcode;
+    const url = "/api/theater/" + zip_code;
   
       d3.json(url, function (data) {
       var columnHead=["Name", "Address", "City", 'State', "Phone", "Rating", "# of Reviews"];
-
+      // tbody.html("");
         function tabulate(data, columns) {
               var table = d3.select('#theater_table').append('table')
               var thead = table.append('thead')
@@ -103,12 +105,11 @@ function buildRestaurantData(zip_code) {
       });
     };
 
-  function buildToursData(zipcode) {
+  function buildToursData(zip_code) {
 
         // Build the metadata panel
-        const url = "/api/tours/" + zipcode;
-       
-        //   tbody.html("");
+        const url = "/api/tours/" + zip_code;
+        
           d3.json(url, function (data) {
           var columnHead=["Name", "Address", "City", 'State', "Phone", "Rating", "# of Reviews"];
             function tabulate(data, columns) {
@@ -153,11 +154,10 @@ function buildRestaurantData(zip_code) {
           });
         };
 
-  function buildStadiumsData(zipcode) {
+  function buildStadiumsData(zip_code) {
 
         // Build the metadata panel
-        const url = "/api/stadiums/" + zipcode;
-       
+        const url = "/api/stadiums/" + zip_code;
         //   tbody.html("");
           d3.json(url, function (data) {
             var columnHead=["Name", "Address", "City", 'State', "Phone", "Rating", "# of Reviews"];
@@ -204,11 +204,10 @@ function buildRestaurantData(zip_code) {
           });
         };
 
-  function buildHouseholdIncomeData(zipcode) {
+  function buildHouseholdIncomeData(zip_code) {
 
             // Build the metadata panel
-            const url = "/api/housing/" + zipcode;
-           
+            const url = "/api/housing/" + zip_code;
             //   tbody.html("");
               d3.json(url, function (data) {
     
@@ -249,7 +248,23 @@ function buildRestaurantData(zip_code) {
               });
         };
 
-  buildWeatherData(zip_code)
+
+  function buildWeatherData(zip_code) {
+
+          const url = "/api/weather/" + zip_code;
+          d3.json(url, function(weather_data) {
+           document.getElementById("weather_table").innerHTML = 
+           '<h3><strong>City:</strong> ' + weather_data.name + '</h3>' +
+           '<br/><h3><strong>Forecast:</strong> ' + weather_data.weather[0].main + '</h3>' +
+           '<br/><h3><strong>Temperature:</strong> ' + weather_data.main.temp + " F" + '</h3>' +
+           '<br/><h3><strong>Humidity:</strong> ' + weather_data.main.humidity + " %" + '</h3>' +
+           '<br/><h3><strong>Wind Speed:</strong> ' + weather_data.wind.speed + " mph" + '</h3>'
+           ;
+                  });
+            };
+
+
+  buildWeatherData(zip_code);
   buildRestaurantData(zip_code);
   buildTheatersData(zip_code);
   buildToursData(zip_code);

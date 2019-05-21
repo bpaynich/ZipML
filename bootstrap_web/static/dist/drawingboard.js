@@ -1368,7 +1368,7 @@ DrawingBoard.Control.Size = DrawingBoard.Control.extend({
 });
 DrawingBoard.Control.Download = DrawingBoard.Control.extend({
 
-	name: 'test',
+	name: 'download',
 
 	initialize: function() {
 		this.$el.append('<button class="drawing-board-control-download-button"></button>');
