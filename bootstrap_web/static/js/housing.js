@@ -35,6 +35,48 @@ function buildHousingOccupancy(zip_code) {
     });
 };
 
+
+function buildAverageHouseholdIncomeOverTime(zip_code) {
+
+  const url = "/api/housing/" + zip_code;
+
+  d3.json(url, function(data) {
+
+  // Build a Pie Chart
+  var x_array = [];
+  var y_array = [];
+  for (var i = 0; i < 4; i++) { 
+    x = data.average_household_income_over_time[0].values[i].x
+    y = data.average_household_income_over_time[0].values[i].y
+    x_array.push(x);
+    y_array.push(y);
+  }
+
+  var trace1 = {
+    values: y_array,
+    labels: x_array,
+    type: 'bar'
+  };
+
+  // data
+  var data1 = [trace1];
+
+  var layout1 = {
+    title: 'Average Household Income Over Time',
+    showlegend: true,
+    height: 600,
+    width: 600
+  };
+
+  Plotly.newPlot("average_household_income_over_time", data1, layout1);
+  
+});
+};
+
+
+
+
+
 function buildHousingType(zip_code) {
 
   const url = "/api/housing/" + zip_code;
