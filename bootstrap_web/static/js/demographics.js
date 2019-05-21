@@ -1,6 +1,6 @@
-function buildAnnualIndividualEarnings(zip_code) {
+function buildAnnualIndividualEarnings(zipcode) {
 
-  const url = "/api/housing/" + zip_code;
+  const url = "/api/housing/" + zipcode;
 
   d3.json(url, function(data) {
 
@@ -35,9 +35,9 @@ function buildAnnualIndividualEarnings(zip_code) {
 });
 };
 
-function buildEmploymentStatus(zip_code) {
+function buildEmploymentStatus(zipcode) {
 
-  const url = "/api/housing/" + zip_code;
+  const url = "/api/housing/" + zipcode;
 
   d3.json(url, function(data) {
 
@@ -72,9 +72,9 @@ function buildEmploymentStatus(zip_code) {
 });
 };
 
-function buildAverageHouseholdIncomeOverTime(zip_code) {
+function buildAverageHouseholdIncomeOverTime(zipcode) {
 
-  const url = "/api/housing/" + zip_code;
+  const url = "/api/housing/" + zipcode;
 
   d3.json(url, function(data) {
 

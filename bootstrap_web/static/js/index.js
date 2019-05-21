@@ -1,7 +1,9 @@
-function buildRestaurantData(zip_code) {
+//zipcode = '10010';
+
+function buildRestaurantData(zipcode) {
 
     // Build the metadata panel
-    const url = "/api/restaurants/" + zip_code;
+    const url = "/api/restaurants/" + zipcode;
       //tbody.html("");
       d3.json(url, function(data) {
         var columnHead=["Name", "Address", "City", 'State', "Phone", "Rating", "# of Reviews"];
@@ -52,10 +54,10 @@ function buildRestaurantData(zip_code) {
           
     };
 
-  function buildTheatersData(zip_code) {
+  function buildTheatersData(zipcode) {
 
     // Build the metadata panel
-    const url = "/api/theater/" + zip_code;
+    const url = "/api/theater/" + zipcode;
   
       d3.json(url, function (data) {
       var columnHead=["Name", "Address", "City", 'State', "Phone", "Price Range", "Rating", "# of Reviews"];
@@ -103,10 +105,10 @@ function buildRestaurantData(zip_code) {
       });
     };
 
-  function buildToursData(zip_code) {
+  function buildToursData(zipcode) {
 
         // Build the metadata panel
-        const url = "/api/tours/" + zip_code;
+        const url = "/api/tours/" + zipcode;
        
         //   tbody.html("");
           d3.json(url, function (data) {
@@ -153,10 +155,10 @@ function buildRestaurantData(zip_code) {
           });
         };
 
-  function buildStadiumsData(zip_code) {
+  function buildStadiumsData(zipcode) {
 
         // Build the metadata panel
-        const url = "/api/stadiums/" + zip_code;
+        const url = "/api/stadiums/" + zipcode;
        
         //   tbody.html("");
           d3.json(url, function (data) {
@@ -204,10 +206,10 @@ function buildRestaurantData(zip_code) {
           });
         };
 
-  function buildHouseholdIncomeData(zip_code) {
+  function buildHouseholdIncomeData(zipcode) {
 
             // Build the metadata panel
-            const url = "/api/housing/" + zip_code;
+            const url = "/api/housing/" + zipcode;
            
             //   tbody.html("");
               d3.json(url, function (data) {

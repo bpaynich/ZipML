@@ -1,6 +1,6 @@
-function buildHousingOccupancy(zip_code) {
+function buildHousingOccupancy(zipcode) {
 
-        const url = "/api/housing/" + zip_code;
+        const url = "/api/housing/" + zipcode;
     
         d3.json(url, function(data) {
 
@@ -35,9 +35,9 @@ function buildHousingOccupancy(zip_code) {
     });
 };
 
-function buildHousingType(zip_code) {
+function buildHousingType(zipcode) {
 
-  const url = "/api/housing/" + zip_code;
+  const url = "/api/housing/" + zipcode;
 
   d3.json(url, function(data) {
 
@@ -72,9 +72,9 @@ function buildHousingType(zip_code) {
 });
 };
 
-function buildOwnerOccupiedHomeValues(zip_code) {
+function buildOwnerOccupiedHomeValues(zipcode) {
 
-  const url = "/api/housing/" + zip_code;
+  const url = "/api/housing/" + zipcode;
 
   d3.json(url, function(data) {
 
