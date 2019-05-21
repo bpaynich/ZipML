@@ -1,6 +1,4 @@
-//zipcode = '10010';
-
-function buildRestaurantData(zipcode) {
+function buildRestaurantData(zip_code) {
 
     // Build the metadata panel
     const url = "/api/restaurants/" + zipcode;
@@ -60,7 +58,7 @@ function buildRestaurantData(zipcode) {
     const url = "/api/theater/" + zipcode;
   
       d3.json(url, function (data) {
-      var columnHead=["Name", "Address", "City", 'State', "Phone", "Price Range", "Rating", "# of Reviews"];
+      var columnHead=["Name", "Address", "City", 'State', "Phone", "Rating", "# of Reviews"];
 
         function tabulate(data, columns) {
               var table = d3.select('#theater_table').append('table')
@@ -100,7 +98,7 @@ function buildRestaurantData(zipcode) {
             data.businesses[i]["city"]=data.businesses[i]['location']['city']
             data.businesses[i]["state"]=data.businesses[i]['location']['state']
         }
-          tabulate(data, ['name','address', 'city', 'state', 'display_phone', 'price', 'rating', 'review_count']);
+          tabulate(data, ['name','address', 'city', 'state', 'display_phone', 'rating', 'review_count']);
           
       });
     };
@@ -112,7 +110,7 @@ function buildRestaurantData(zipcode) {
        
         //   tbody.html("");
           d3.json(url, function (data) {
-          var columnHead=["Name", "Address", "City", 'State', "Phone", "Price Range", "Rating", "# of Reviews"];
+          var columnHead=["Name", "Address", "City", 'State', "Phone", "Rating", "# of Reviews"];
             function tabulate(data, columns) {
                   var table = d3.select('#tours_table').append('table')
                   var thead = table.append('thead')
@@ -151,7 +149,7 @@ function buildRestaurantData(zipcode) {
                 data.businesses[i]["city"]=data.businesses[i]['location']['city']
                 data.businesses[i]["state"]=data.businesses[i]['location']['state']
             }
-              tabulate(data, ['name','address', 'city', 'state', 'display_phone', 'price', 'rating', 'review_count']);
+              tabulate(data, ['name','address', 'city', 'state', 'display_phone', 'rating', 'review_count']);
           });
         };
 
@@ -162,7 +160,7 @@ function buildRestaurantData(zipcode) {
        
         //   tbody.html("");
           d3.json(url, function (data) {
-            var columnHead=["Name", "Address", "City", 'State', "Phone", "Price Range", "Rating", "# of Reviews"];
+            var columnHead=["Name", "Address", "City", 'State', "Phone", "Rating", "# of Reviews"];
       
             function tabulate(data, columns) {
                   var table = d3.select('#stadium_table').append('table')
@@ -202,7 +200,7 @@ function buildRestaurantData(zipcode) {
                 data.businesses[i]["city"]=data.businesses[i]['location']['city']
                 data.businesses[i]["state"]=data.businesses[i]['location']['state']
             }
-              tabulate(data, ['name','address', 'city', 'state', 'display_phone', 'price', 'rating', 'review_count']);
+              tabulate(data, ['name','address', 'city', 'state', 'display_phone', 'rating', 'review_count']);
           });
         };
 
@@ -251,7 +249,7 @@ function buildRestaurantData(zipcode) {
               });
         };
 
-
+  buildWeatherData(zip_code)
   buildRestaurantData(zip_code);
   buildTheatersData(zip_code);
   buildToursData(zip_code);

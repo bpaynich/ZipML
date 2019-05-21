@@ -1,21 +1,5 @@
 zip_code = '85021'
 
-// d3.json("/data").then(data => {
-  
-//   var tbody = d3.select("tbody");
-//   data.forEach(cycle => {
-
-//       var row = tbody.append("tr");
-      
-//       Object.entries(cycle).forEach(([key, value])=> {
-
-//         if (column.includes(key)) {
-              
-//               row.append("td").text(value);
-//           }
-//         });
-//        });
-//   });
 
 function buildRestaurantData(zip_code) {
 

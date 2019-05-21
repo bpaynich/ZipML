@@ -35,20 +35,15 @@ def predict(directory) :
 #    directory = './IndivDigits/'
     bp = ''
 
-    # import shutil, os
-    # source = "./"
-    # destination = directory
-    # for f in os.listdir(source):
-    #     if not os.path.exists(destination):
-    #         os.makedirs(destination)
-    #     if f.endswith("png"):
-    #         shutil.move(source, destination)
 
     for filename in os.listdir(directory):
         if filename.endswith(".png"):   
             fullpath = directory+filename
             bp= bp + str(newDigProc(fullpath)[0])
+            os.remove(filename)
     print(bp)
+
+
     return bp
 
 if __name__ == "__main__":

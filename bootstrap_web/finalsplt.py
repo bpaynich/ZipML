@@ -1,7 +1,24 @@
 import sklearn.cluster, PIL.Image, numpy, sys, os.path
+import shutil, os
 # import matplotlib.pyplot as plt
 
 def split(fn, thresh=200):
+
+
+    old_dir = os.getcwd()
+    #print(old_dir)
+    os.chdir("../../../../../")
+    os.chdir("./Downloads")
+    source = os.getcwd()
+    #print(source)
+
+    # destination = "./"
+    for f in os.listdir(source):
+        if f.endswith("zip.png"):
+            shutil.move(f"{source}/{f}", old_dir)
+            print("File moved")
+    os.chdir(old_dir)   
+    #print(os.getcwd())
 
     img = PIL.Image.open(fn)
     dat = numpy.array(img.convert(mode='L'))
