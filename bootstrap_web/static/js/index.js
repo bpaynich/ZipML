@@ -1,13 +1,13 @@
-// zip_code = '85021'
+zip_code ='77001'; 
 
 function buildRestaurantData(zip_code) {
 
     // Build the metadata panel
     const url = "/api/restaurants/" + zip_code;
-
+      //tbody.html("");
       d3.json(url, function(data) {
         var columnHead=["Name", "Address", "City", 'State', "Phone", "Rating", "# of Reviews"];
-        // tbody.html("");
+
         function tabulate(data, columns) {
               var table = d3.select('#restaurant_table').append('table')
               var thead = table.append('thead')
@@ -54,14 +54,14 @@ function buildRestaurantData(zip_code) {
           
     };
 
-  function buildTheatersData(zipcode) {
+  function buildTheatersData(zip_code) {
 
     // Build the metadata panel
     const url = "/api/theater/" + zip_code;
   
       d3.json(url, function (data) {
       var columnHead=["Name", "Address", "City", 'State', "Phone", "Rating", "# of Reviews"];
-      // tbody.html("");
+
         function tabulate(data, columns) {
               var table = d3.select('#theater_table').append('table')
               var thead = table.append('thead')
@@ -109,7 +109,8 @@ function buildRestaurantData(zip_code) {
 
         // Build the metadata panel
         const url = "/api/tours/" + zip_code;
-        
+       
+        //   tbody.html("");
           d3.json(url, function (data) {
           var columnHead=["Name", "Address", "City", 'State', "Phone", "Rating", "# of Reviews"];
             function tabulate(data, columns) {
@@ -158,6 +159,7 @@ function buildRestaurantData(zip_code) {
 
         // Build the metadata panel
         const url = "/api/stadiums/" + zip_code;
+       
         //   tbody.html("");
           d3.json(url, function (data) {
             var columnHead=["Name", "Address", "City", 'State', "Phone", "Rating", "# of Reviews"];
@@ -204,10 +206,47 @@ function buildRestaurantData(zip_code) {
           });
         };
 
+    function buildWeatherData(zip_code) {
+
+        const url = "http://localhost:5000/api/weather/" + zip_code;
+        d3.json(url, function(weather_data) {
+         document.getElementById("weather_table").innerHTML = 
+         '<h4><strong>City:</strong> ' + weather_data.name + '</h4>' +
+         '<br/><h4><strong>Forecast:</strong> ' + weather_data.weather[0].main + '</h4>' +
+         '<br/><h4><strong>Temperature:</strong> ' + weather_data.main.temp + " F" + '</h4>' +
+         '<br/><h4><strong>Humidity:</strong> ' + weather_data.main.humidity + " %" + '</h4>' +
+         '<br/><h4><strong>Wind Speed:</strong> ' + weather_data.wind.speed + " mph" + '</h4>'
+         ;
+                });
+          };
+    
+    function buildWeatherImg() {
+      const url = "http://localhost:5000/api/weather/" + zip_code;
+        d3.json(url, function(weather_data) { 
+            
+            if (weather_data.main.temp > 80) {
+              var img = "static/img/portfolio/beer.jpg";
+            }
+            else if (weather_data.main.temp < 80 && weather_data.main.temp > 60) {
+              img = "static/img/portfolio/coffee.jpg";
+            }
+            else {
+              img = "static/img/portfolio/coco.jpg";
+            }
+            d3.json(img, function() {
+            document.getElementById("weather_image").innerHTML = 
+            
+             '<img src='+img+'></img>'
+             ;
+            });
+          });
+        }
+
   function buildHouseholdIncomeData(zip_code) {
 
             // Build the metadata panel
             const url = "/api/housing/" + zip_code;
+           
             //   tbody.html("");
               d3.json(url, function (data) {
     
@@ -248,22 +287,7 @@ function buildRestaurantData(zip_code) {
               });
         };
 
-
-  function buildWeatherData(zip_code) {
-
-          const url = "/api/weather/" + zip_code;
-          d3.json(url, function(weather_data) {
-           document.getElementById("weather_table").innerHTML = 
-           '<h3><strong>City:</strong> ' + weather_data.name + '</h3>' +
-           '<br/><h3><strong>Forecast:</strong> ' + weather_data.weather[0].main + '</h3>' +
-           '<br/><h3><strong>Temperature:</strong> ' + weather_data.main.temp + " F" + '</h3>' +
-           '<br/><h3><strong>Humidity:</strong> ' + weather_data.main.humidity + " %" + '</h3>' +
-           '<br/><h3><strong>Wind Speed:</strong> ' + weather_data.wind.speed + " mph" + '</h3>'
-           ;
-                  });
-            };
-
-
+  buildWeatherImg();
   buildWeatherData(zip_code);
   buildRestaurantData(zip_code);
   buildTheatersData(zip_code);
