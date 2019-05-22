@@ -14,8 +14,12 @@ from yelp_api import api_key, owm_key
 # Hide warning messages
 from ipywidgets.embed import embed_minimal_html
 warnings.filterwarnings('ignore')
-import finalsplt
-import predictFullString
+# import finalsplt
+# import predictFullString
+import imageMove
+import predict_interface_usage
+
+
 
 #################################################
 # Flask Setup
@@ -59,8 +63,8 @@ def housing_query(zip_code):
 @app.route('/submit', methods=['GET'])
 def submit_query():
     if request.method == 'GET':
-        finalsplt.split("zip.png")
-        zip_code = predictFullString.predict("./")
+        imageMove.moveImage("zip.png")
+        zip_code = predict_interface_usage.predict("zip")
         print("-------Prediction Result ---------")
         print(zip_code)
         print("----------------------------------")
