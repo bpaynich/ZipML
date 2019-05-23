@@ -1,4 +1,4 @@
-zip_code ='77001'; 
+// zip_code ='04011'; 
 
 function buildRestaurantData(zip_code) {
 
@@ -55,7 +55,7 @@ function buildRestaurantData(zip_code) {
     };
 
   function buildTheatersData(zip_code) {
-
+  
     // Build the metadata panel
     const url = "/api/theater/" + zip_code;
   
@@ -103,7 +103,8 @@ function buildRestaurantData(zip_code) {
           tabulate(data, ['name','address', 'city', 'state', 'display_phone', 'rating', 'review_count']);
           
       });
-    };
+    
+  };
 
   function buildToursData(zip_code) {
 

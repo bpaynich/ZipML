@@ -66,7 +66,7 @@ def submit_query():
         imageMove.moveImage("zip.png")
         zip_code = predict_interface_usage.predict("zip")
         print("-------Prediction Result ---------")
-        print(zip_code)
+        # print(zip_code)
         print("----------------------------------")
     return render_template("index.html", zip_code=zip_code)
 

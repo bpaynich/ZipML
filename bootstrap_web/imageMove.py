@@ -11,7 +11,7 @@ def moveImage(fn):
     print(dest)
 
     #moving to where the image is downloaded. Will need adjustment here to accomodate local structure
-    os.chdir("../../../../../../Downloads")
+    os.chdir("../../../../Downloads")
     source = os.getcwd()
 
     #move command
